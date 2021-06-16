@@ -510,7 +510,7 @@ func (l *Light) getCache(blockNum uint64) *cache {
 		var nextEpoch = epoch + 1
 		var nextEpochLength = epochLength
 		var nextEpochBlock = nextEpoch * epochLength
-		if nextEpochBlock == *l.ecip1099FBlock && epochLength == epochLengthDefault {
+		if l.ecip1099FBlock != nil && nextEpochBlock == *l.ecip1099FBlock && epochLength == epochLengthDefault {
 			nextEpoch = nextEpoch / 2
 			nextEpochLength = epochLengthECIP1099
 		}
